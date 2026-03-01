@@ -1,0 +1,70 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-resin",
+      "description": "Exquisite resin art table with ocean waves effect",
+      "imageUrl": "https://picsum.photos/seed/resin1/1200/800",
+      "imageHint": "resin art"
+    },
+    {
+      "id": "martina-perez",
+      "description": "Martina Pérez sonriendo con delantal en su taller",
+      "imageUrl": "https://i.imgur.com/Ayssgqf.jpeg",
+      "imageHint": "woman artist"
+    },
+    {
+      "id": "resin-grid-1",
+      "description": "Referencia de pieza de resina 1",
+      "imageUrl": "https://i.imgur.com/qwZoChp.jpeg",
+      "imageHint": "resin jewelry"
+    },
+    {
+      "id": "resin-grid-2",
+      "description": "Referencia de pieza de resina 2",
+      "imageUrl": "https://i.imgur.com/LK8BXQj.jpeg",
+      "imageHint": "resin flower"
+    },
+    {
+      "id": "resin-grid-3",
+      "description": "Referencia de pieza de resina 3",
+      "imageUrl": "https://i.imgur.com/G3Xruzl.jpeg",
+      "imageHint": "resin keychain"
+    },
+    {
+      "id": "resin-grid-4",
+      "description": "Referencia de pieza de resina 4",
+      "imageUrl": "https://i.imgur.com/5QNIYn4.jpeg",
+      "imageHint": "resin art"
+    },
+    {
+      "id": "moldes-silicona",
+      "description": "Moldes de silicona para resina",
+      "imageUrl": "https://i.imgur.com/PZydhbd.png",
+      "imageHint": "silicone molds"
+    },
+    {
+      "id": "cost-production",
+      "description": "Piezas de resina económicas y hermosas",
+      "imageUrl": "https://i.imgur.com/Nk5VHqU.png",
+      "imageHint": "jewelry crafting"
+    },
+    {
+      "id": "student-success-1",
+      "description": "Resultado de alumna 1",
+      "imageUrl": "https://i.imgur.com/icac9Wd.png",
+      "imageHint": "handmade resin"
+    },
+    {
+      "id": "student-success-2",
+      "description": "Resultado de alumna 2",
+      "imageUrl": "https://i.imgur.com/uB46Vii.png",
+      "imageHint": "resin art"
+    },
+    {
+      "id": "student-success-3",
+      "description": "Resultado de alumna 3",
+      "imageUrl": "https://i.imgur.com/2jEM3y1.jpeg",
+      "imageHint": "crafting business"
+    }
+  ]
+}
