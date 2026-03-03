@@ -10,7 +10,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { ArrowRight, Sparkles, ShieldCheck } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
-const CHECKOUT_URL = "https://seguroamplopay.com/checkout/cmm3zk4xf08ju1rlkljkvomzg?offer=5LYS90G";
+const CHECKOUT_URL = "https://pay.hotmart.com/O104724868L?checkoutMode=10";
 
 export default function Home() {
   const [showQuiz, setShowQuiz] = useState(false);

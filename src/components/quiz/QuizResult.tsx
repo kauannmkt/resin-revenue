@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -6,7 +5,7 @@ import { ShieldCheck, Zap, ArrowRight, Star, Clock, Gift, ShoppingCart } from "l
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
-const CHECKOUT_URL = "https://seguroamplopay.com/checkout/cmm3zk4xf08ju1rlkljkvomzg?offer=5LYS90G";
+const CHECKOUT_URL = "https://pay.hotmart.com/O104724868L?checkoutMode=10";
 
 export function QuizResult() {
   const resinGrid = PlaceHolderImages.filter(img => img.id.startsWith('resin-grid-'));

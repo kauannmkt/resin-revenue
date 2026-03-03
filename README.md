@@ -4,7 +4,7 @@ Proyecto de página de ventas optimizada para conversiones.
 
 ## Características:
 - **ID de Meta Pixel:** 2370029223462935
-- **Checkout:** AmploPay (US$ 9.90)
+- **Checkout:** Hotmart (US$ 9.90)
 - **Tipografía:** Poppins (Estándar Profesional)
 - **Framework:** Next.js 15 (App Router)
 
