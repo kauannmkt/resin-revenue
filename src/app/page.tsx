@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -26,7 +27,7 @@ export default function Home() {
   };
 
   const handleBuyNow = () => {
-    // Disparar evento de compra do Meta Pixel
+    // Disparar evento de compra en ambos Meta Pixels
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Purchase', {
         value: 142.52,

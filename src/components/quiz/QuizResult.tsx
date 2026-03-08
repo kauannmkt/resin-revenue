@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -11,7 +12,7 @@ export function QuizResult() {
   const resinGrid = PlaceHolderImages.filter(img => img.id.startsWith('resin-grid-'));
 
   const handleBuyNow = () => {
-    // Disparar evento de compra do Meta Pixel
+    // Disparar evento de compra en ambos Meta Pixels
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Purchase', {
         value: 142.52,
