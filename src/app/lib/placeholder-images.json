@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -5,6 +6,12 @@
       "description": "Exquisite resin art table with ocean waves effect",
       "imageUrl": "https://picsum.photos/seed/resin1/1200/800",
       "imageHint": "resin art"
+    },
+    {
+      "id": "main-resin-product",
+      "description": "Imagen principal del producto de resina",
+      "imageUrl": "https://i.imgur.com/ZiRhGwg.jpeg",
+      "imageHint": "resin jewelry"
     },
     {
       "id": "martina-perez",

@@ -20,7 +20,7 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-resin');
+  const mainImage = PlaceHolderImages.find(img => img.id === 'main-resin-product');
   const socialProofImages = [
     PlaceHolderImages.find(img => img.id === 'student-success-1'),
     PlaceHolderImages.find(img => img.id === 'student-success-2'),
@@ -34,19 +34,6 @@ export default function Home() {
 
       {!showQuiz ? (
         <div className="flex-1 flex flex-col items-center px-6 py-10 md:py-16 text-center relative overflow-hidden">
-          {/* Subtle Background Context */}
-          <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
-            {heroImage && (
-              <Image 
-                src={heroImage.imageUrl} 
-                alt="Background" 
-                fill 
-                className="object-cover"
-                priority
-              />
-            )}
-          </div>
-          
           <div className="max-w-md mx-auto space-y-8 relative z-10 flex flex-col items-center">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] animate-fade-in">
@@ -63,6 +50,20 @@ export default function Home() {
             <p className="text-base text-muted-foreground font-medium text-balance">
               Un método paso a paso que ya ayudó a más de <span className="text-foreground font-bold">3.000 mujeres</span> a comenzar su propio negocio con resina.
             </p>
+
+            {/* Middle Main Image */}
+            {mainImage && (
+              <div className="w-full relative aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-4 border-accent">
+                <Image 
+                  src={mainImage.imageUrl} 
+                  alt="Viviendo de Resina" 
+                  fill 
+                  className="object-cover"
+                  priority
+                  unoptimized
+                />
+              </div>
+            )}
 
             {/* CTA Section */}
             <div className="w-full pt-2 space-y-4">
