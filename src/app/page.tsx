@@ -93,13 +93,13 @@ export default function Home() {
                 <CarouselContent>
                   {socialProofImages.map((img, idx) => (
                     <CarouselItem key={idx}>
-                      <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg border-4 border-accent bg-accent/20 mx-1">
+                      <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg border-4 border-accent bg-accent/5 mx-1 flex items-center justify-center">
                         {img && (
                           <Image 
                             src={img.imageUrl} 
                             alt={`Resultado ${idx + 1}`} 
                             fill 
-                            className="object-cover"
+                            className="object-contain p-2"
                             unoptimized
                           />
                         )}
@@ -124,7 +124,7 @@ export default function Home() {
       )}
 
       {/* Simplified Footer */}
-      <footer className="py-6 px-6 border-t bg-white text-center">
+      <footer className="py-6 px-6 border-t bg-white text-center mt-auto">
         <p className="font-black text-primary/40 uppercase tracking-[0.2em] text-[10px]">Viviendo de Resina</p>
       </footer>
     </main>
