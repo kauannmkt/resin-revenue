@@ -2,19 +2,24 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, Zap, ArrowRight, Star, Clock, Gift, ShoppingCart, Lock } from "lucide-react";
+import { ShieldCheck, Zap, ArrowRight, Star, Clock, ShoppingCart, Lock, MapPin, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { Benefits } from "@/components/sections/Benefits";
+import { BonusSection } from "@/components/sections/BonusSection";
+import { GuaranteeSection } from "@/components/sections/GuaranteeSection";
+import { Testimonials } from "@/components/sections/Testimonials";
 
 const CHECKOUT_URL = "https://pay.hotmart.com/O104724868L?checkoutMode=10";
 
 export function QuizResult() {
   const resinGrid = PlaceHolderImages.filter(img => img.id.startsWith('resin-grid-'));
+  const instructorImg = PlaceHolderImages.find(img => img.id === 'martina-perez');
 
   const handleBuyNow = () => {
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Purchase', {
-        value: 9.90,
+        value: 142.52,
         currency: 'USD',
       });
     }
@@ -23,7 +28,7 @@ export function QuizResult() {
 
   return (
     <div className="animate-fade-in bg-white pb-20">
-      {/* Sales Header */}
+      {/* Sales Header - Approval Message */}
       <div className="bg-primary text-white py-16 px-6 text-center space-y-6">
         <div className="inline-block bg-white/20 px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">
           Perfil Aprobado ✅
@@ -36,8 +41,8 @@ export function QuizResult() {
         </p>
       </div>
 
-      {/* Offer Summary */}
-      <div className="max-w-md mx-auto px-6 -mt-10">
+      {/* Offer Summary Card */}
+      <div className="max-w-md mx-auto px-6 -mt-10 mb-20">
         <div className="bg-white border-4 border-primary rounded-[3rem] p-8 shadow-2xl space-y-8 relative z-10">
           <div className="space-y-6">
             <h2 className="text-2xl font-black text-center">Todo lo que recibirás:</h2>
@@ -84,45 +89,96 @@ export function QuizResult() {
         </div>
       </div>
 
-      {/* Social Proof Gallery */}
-      <div className="py-20 px-6 space-y-10">
-        <h2 className="text-2xl md:text-3xl font-black text-center">Tus creaciones pronto serán así...</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          {resinGrid.slice(0, 4).map((img, i) => (
-            <div key={i} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition-transform">
+      {/* Biography Section */}
+      <section className="py-20 px-6 bg-accent/30 overflow-hidden">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
+          <div className="relative w-64 h-80 shrink-0 rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white">
+            {instructorImg && (
               <Image 
-                src={img.imageUrl} 
-                alt="Resultado" 
+                src={instructorImg.imageUrl} 
+                alt="Martina Pérez" 
                 fill 
                 className="object-cover"
                 unoptimized
               />
+            )}
+          </div>
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-black">Conoce a Martina Pérez</h2>
+              <p className="text-primary font-black uppercase tracking-widest text-sm">Tu mentora y guía</p>
+            </div>
+            <p className="text-muted-foreground font-medium leading-relaxed">
+              Martina es una experta artesana que ha transformado su pasión por la resina en un negocio próspero. Después de años perfeccionando técnicas y cometiendo errores, creó el método "Viviendo de Resina" para ayudar a otras mujeres a alcanzar su independencia financiera sin pasar por las mismas dificultades.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full text-xs font-bold shadow-sm">
+                <CheckCircle2 className="w-4 h-4 text-primary" /> +3,000 Alumnas
+              </div>
+              <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full text-xs font-bold shadow-sm">
+                <CheckCircle2 className="w-4 h-4 text-primary" /> Experta en Resina
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof - Results Gallery */}
+      <div className="py-24 px-6 space-y-12">
+        <div className="text-center space-y-4">
+          <h2 className="text-3xl md:text-5xl font-black">Resultados que Impactan</h2>
+          <p className="text-muted-foreground font-medium">Mira lo que nuestras alumnas están creando después de solo unos días de práctica.</p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+          {resinGrid.map((img, i) => (
+            <div key={i} className="relative aspect-square rounded-[2rem] overflow-hidden shadow-lg group">
+              <Image 
+                src={img.imageUrl} 
+                alt="Resultado de alumna" 
+                fill 
+                className="object-cover transition-transform group-hover:scale-110"
+                unoptimized
+              />
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div className="bg-white/90 p-2 rounded-full">
+                  <Star className="w-5 h-5 text-primary fill-primary" />
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Final Urgency */}
-      <div className="py-16 px-6 text-center space-y-10 bg-accent/30 border-y border-primary/10">
+      {/* Dynamic Sections Moved from Landing */}
+      <Benefits />
+      <Testimonials />
+      <BonusSection />
+      <GuaranteeSection />
+
+      {/* Final Urgency & Final CTA */}
+      <div className="py-20 px-6 text-center space-y-12 bg-primary text-white">
         <div className="max-w-2xl mx-auto space-y-4">
-          <p className="text-red-600 font-black flex items-center justify-center gap-2 uppercase tracking-widest text-sm">
-            <Clock className="w-5 h-5" /> Solo quedan 3 plazas disponibles
+          <p className="font-black flex items-center justify-center gap-2 uppercase tracking-widest text-sm text-secondary">
+            <Clock className="w-5 h-5" /> ÚLTIMA OPORTUNIDAD
           </p>
-          <h2 className="text-3xl md:text-4xl font-black">No pierdas esta oportunidad única</h2>
-          <p className="text-muted-foreground font-medium">Empieza hoy tu propio negocio y alcanza tu independencia financiera con el arte en resina.</p>
+          <h2 className="text-3xl md:text-5xl font-black">¿Estás lista para cambiar tu vida hoy?</h2>
+          <p className="opacity-80 font-medium text-lg">Únete a nuestra comunidad y comienza a facturar con tus propias manos.</p>
         </div>
         
-        <div className="max-w-md mx-auto space-y-4">
+        <div className="max-w-md mx-auto space-y-6">
           <Button 
             onClick={handleBuyNow}
-            className="w-full h-20 bg-primary hover:bg-primary/90 text-white text-xl font-black rounded-3xl shadow-xl"
+            className="w-full h-24 bg-secondary hover:bg-secondary/90 text-white text-2xl font-black rounded-[2.5rem] shadow-2xl transition-transform hover:scale-105"
           >
-            SÍ, QUIERO EMPEZAR HOY
-            <ArrowRight className="ml-2" />
+            SÍ, QUIERO EL ACCESO ✅
+            <ArrowRight className="ml-2 w-7 h-7" />
           </Button>
-          <p className="text-xs font-bold text-muted-foreground flex items-center justify-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-green-600" /> Garantía de Satisfacción de 7 Días
-          </p>
+          <div className="flex flex-col items-center gap-2 opacity-70">
+            <p className="text-sm font-bold flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5" /> Garantía de Satisfacción de 7 Días
+            </p>
+            <p className="text-[10px] uppercase font-black tracking-widest">Compra Protegida por Hotmart</p>
+          </div>
         </div>
       </div>
     </div>
