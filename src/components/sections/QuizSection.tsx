@@ -226,7 +226,7 @@ export function QuizSection() {
           </div>
         ) : step.type === "info" ? (
           <div className="space-y-8 text-center animate-slide-up">
-            <div className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-xl bg-accent/10">
+            <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-xl bg-accent/10">
               {PlaceHolderImages.find(img => img.id === step.imageId)?.imageUrl && (
                 <Image 
                   src={PlaceHolderImages.find(img => img.id === step.imageId)!.imageUrl} 
@@ -265,7 +265,7 @@ export function QuizSection() {
                   const img = PlaceHolderImages.find(item => item.id === id);
                   return (
                     <CarouselItem key={idx}>
-                      <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-lg mx-2 bg-accent/20">
+                      <div className="relative aspect-video rounded-3xl overflow-hidden shadow-lg mx-2 bg-accent/20">
                         {img?.imageUrl && (
                           <Image 
                             src={img.imageUrl} 
