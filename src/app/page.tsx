@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useRef } from 'react';
@@ -20,7 +19,6 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const mainImage = PlaceHolderImages.find(img => img.id === 'main-resin-product');
   const socialProofImages = [
     PlaceHolderImages.find(img => img.id === 'student-success-1'),
     PlaceHolderImages.find(img => img.id === 'student-success-2'),
@@ -42,28 +40,15 @@ export default function Home() {
             </div>
             
             {/* Headline */}
-            <h1 className="text-3xl font-black leading-[1.1] tracking-tight text-balance">
-              Aprende a crear <span className="text-primary">piezas de resina</span> y genera ingresos desde casa aunque empieces desde cero
-            </h1>
-            
-            {/* Subheadline */}
-            <p className="text-base text-muted-foreground font-medium text-balance">
-              Un método paso a paso que ya ayudó a más de <span className="text-foreground font-bold">3.000 mujeres</span> a comenzar su propio negocio con resina.
-            </p>
-
-            {/* Middle Main Image */}
-            {mainImage && (
-              <div className="w-full relative aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-4 border-accent">
-                <Image 
-                  src={mainImage.imageUrl} 
-                  alt="Viviendo de Resina" 
-                  fill 
-                  className="object-cover"
-                  priority
-                  unoptimized
-                />
-              </div>
-            )}
+            <div className="space-y-4">
+              <h1 className="text-3xl font-black leading-[1.1] tracking-tight text-balance">
+                Aprende a crear <span className="text-primary">piezas de resina</span> y genera ingresos desde casa aunque empieces desde cero
+              </h1>
+              
+              <p className="text-base text-muted-foreground font-medium text-balance">
+                Un método paso a paso que ya ayudó a más de <span className="text-foreground font-bold">3.000 mujeres</span> a comenzar su propio negocio con resina.
+              </p>
+            </div>
 
             {/* CTA Section */}
             <div className="w-full pt-2 space-y-4">
